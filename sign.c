@@ -22,7 +22,7 @@ int main(){
     sign = (v > 0) - (v < 0);
 
     // sign is either 0 or 1
-    sign = 1 ^ ((unsigned int) v >> (sizeof(int) * CHAR_BIT - 1));	
+    sign = 1 ^ ((unsigned int)((int)v) >> (sizeof(int) * CHAR_BIT - 1));	
 	
     return 0;
 }
