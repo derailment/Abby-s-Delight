@@ -9,7 +9,7 @@ int main(){
     // sign is either -1 or 0
     sign = -(v < 0);
     // to avoid branching
-    sign = -(int)((unsigned int)(int)v) >> (sizeof(int) * CHAR_BIT - 1);
+    sign = -(int)((unsigned int)((int)v) >> (sizeof(int) * CHAR_BIT - 1));
     // less instruction but not portable
     sign = v >> (sizeof(int) * CHAR_BIT - 1);	
 
