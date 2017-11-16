@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <limits.h>
 
+/*
+ * compute the sign of an integer
+ */
+
 int v;
 int sign;
 
