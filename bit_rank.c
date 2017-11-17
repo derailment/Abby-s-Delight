@@ -15,9 +15,10 @@ int main(){
 
     // shift out bits after given position
     r = v >> (sizeof(v) * CHAR_BIT - pos);
-    r = r - ((r >> 1) & ~0UL/3);
-    r = (r & ~0UL/5) + ((r >> 2) & ~0UL/5);
-    r = (r + (r >> 4)) & ~0UL/17;
-    r = (r * (~0UL/255)) >> ((sizeof(v) - 1) * CHAR_BIT); // r = 3
+    r = r - ((r >> 1) & ~0UL/3); // ~0UL/3 = 101010...1
+    r = (r & ~0UL/5) + ((r >> 2) & ~0UL/5); // ~0UL/5 = 110011001100...11
+    r = (r + (r >> 4)) & ~0UL/17; // ~0UL/17 = 111100001111000011110000...1111
+    r = (r * (~0UL/255)) >> ((sizeof(v) - 1) * CHAR_BIT); // ~0UL/255 = 100000001000000010000000...1
+    // r = 3 
     return 0;
 }
